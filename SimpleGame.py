@@ -55,7 +55,7 @@ def redrawWindow(surf, player, players, foods):
 def run():    
     changePlayer = False
     clock = pygame.time.Clock()
-    n = Network("127.0.0.1", 5555)    
+    n = Network("25.22.252.91", 5555)    
     def admin():    
     
         root = tk.Tk()
