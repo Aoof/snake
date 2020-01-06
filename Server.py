@@ -5,7 +5,7 @@ from Player import Player, Food
 from random import randint
 from _thread import *
 
-ip = "127.0.0.1"
+ip = "192.168.0.127"
 port = 5555
 
 serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

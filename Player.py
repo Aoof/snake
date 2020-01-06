@@ -1,5 +1,6 @@
 import pygame
 import random
+import os
 
 
 class Food:
@@ -100,6 +101,9 @@ class Player:
         return False
 
     def eat(self):
+        pygame.mixer.music.load(os.path.join(
+            os.path.dirname(__file__), "media/eat.mp3"))
+        pygame.mixer.music.play(0, .4)
         self.length += 1
 
     def death(self):

@@ -52,37 +52,43 @@ def redrawWindow(surf, player, players, foods):
     pygame.display.update()
 
 
-def run():    
+def run():
     changePlayer = False
     clock = pygame.time.Clock()
+<<<<<<< HEAD
+    n = Network(input("IP: "), int(input("PORT: ")))
+    def admin():
+
+=======
     n = Network("25.22.252.91", 5555)    
     def admin():    
     
+>>>>>>> 382cc7fd997e1e0255c0ce4d03e7b554abe897f4
         root = tk.Tk()
-    
+
         var = tk.StringVar()
-    
-        ent = tk.Entry(root, textvariable=var)    
+
+        ent = tk.Entry(root, textvariable=var)
         ent.pack()
-    
+
         def check(v):
-            x = n.send("^AdminAccess$="+v.get()) 
+            x = n.send("^AdminAccess$="+v.get())
             n.player = x if type(x) != str else n.player
             changePlayer = True
             root.destroy()
-        but = tk.Button(root, text="Login", command=lambda: check(var))    
+        but = tk.Button(root, text="Login", command=lambda: check(var))
         but.pack()
-    
+
         root.mainloop()
-    
+
     keyboard.add_hotkey("F2", admin)
     while True:
         player = n.player
         gameOver = False
         while not gameOver:
             if changePlayer:
-               player.isAdmin = True
-               changePlayer = False
+                player.isAdmin = True
+                changePlayer = False
             clock.tick(30)
             win.fill((170, 170, 170))
 
